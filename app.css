@@ -1,94 +1,71 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 header {
-    background-color: #4CAF50;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em;
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav {
-    display: flex;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav li {
-    margin-right: 1em;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-section {
-    margin: 2em;
-}
-
-section h2 {
-    margin-top: 0;
-}
-
-#about {
-    background-color: #f2f2f2;
-    padding: 1em;
-}
-
-#projects {
-    background-color: #f2f2f2;
-    padding: 1em;
-}
-
-#projects li {
-    list-style: none;
-    margin-bottom: 1em;
-}
-
-#contact {
-    background-color: #f2f2f2;
-    padding: 1em;
-}
-
-form label {
-    display: block;
-    margin-bottom: 0.5em;
-}
-
-form input[type="text"], form input[type="email"], form textarea {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
+    background-color: #333;
+    color: white;
+    padding: 5px;
 }
 
-form input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 0.5em 1em;
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 160px); /* adjust the height to account for header and footer height */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    font-size: 16px;
     border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
 }
 
+#search-results {
+    margin-top: 20px;
+}
+
+#search-results p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#search-results ul {
+    list-style: none;
+    padding: 0;
+}
+
+#search-results li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
 footer {
-    background-color: #4CAF50;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em;
+    padding: 5px;
+    text-align: center; /* add this property to center the text */
 }

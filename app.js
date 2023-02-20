@@ -1,43 +1,34 @@
-// Select all the links in the navigation menu
-var navLinks = document.querySelectorAll("nav a");
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+const searchResults = document.getElementById('search-results');
 
-// Add a click event listener to each link
-navLinks.forEach(function(link) {
-    link.addEventListener("click", function(event) {
-        event.preventDefault();
+searchButton.addEventListener('click', () => {
+    // Call your search API and get the search results
+    const results = getSearchResults(searchInput.value);
 
-        // Get the ID of the section to scroll to
-        var sectionId = this.getAttribute("href");
+    // Clear previous search results
+    searchResults.innerHTML = '';
 
-        // Find the section element
-        var section = document.querySelector(sectionId);
-
-        // Scroll the section into view
-        section.scrollIntoView({ behavior: "smooth" });
-    });
-});
-
-// Select the contact form
-var contactForm = document.querySelector("#contact form");
-
-// Add a submit event listener to the form
-contactForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    // Get the input field values
-    var name = contactForm.querySelector("#name").value;
-    var email = contactForm.querySelector("#email").value;
-    var message = contactForm.querySelector("#message").value;
-
-    // Check if the form is valid
-    if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
-        alert("Please fill in all the fields!");
-        return;
+    // Append search results to searchResults div
+    if (results.length > 0) {
+        searchResults.style.display = 'block';
+        const heading = document.createElement('p');
+        heading.textContent = 'Search Results';
+        searchResults.appendChild(heading);
+        const resultList = document.createElement('ul');
+        results.forEach(result => {
+            const listItem = document.createElement('li');
+            listItem.textContent = result;
+            resultList.appendChild(listItem);
+        });
+        searchResults.appendChild(resultList);
+    } else {
+        searchResults.style.display = 'none';
     }
-
-    // Display a thank-you message
-    var thankYouMessage = document.createElement("p");
-    thankYouMessage.textContent = "Thank you for your message, " + name + "! We'll get back to you soon.";
-    contactForm.parentNode.appendChild(thankYouMessage);
-    contactForm.remove();
 });
+
+function getSearchResults(query) {
+    // Implement your search functionality here
+    // and return the search results
+    return ['Result 1', 'Result 2', 'Result 3'];
+}

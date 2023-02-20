@@ -1,52 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="app.css">
-  </head>
-  <body>
-    <header>
-      <h1>Hello, World!</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+<html lang="en">
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna at suscipit bibendum, sem velit laoreet enim, vel faucibus lorem magna a nibh.</p>
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <title>Search Web App</title>
+  <link rel="stylesheet" href="app.css">
+</head>
 
-    <section id="projects">
-      <h2>My Projects</h2>
-      <ul>
-        <li>Project 1</li>
-        <li>Project 2</li>
-        <li>Project 3</li>
-      </ul>
-    </section>
+<body>
+  <header>
+    <h1>Accessibility Dashboard</h1>
+  </header>
+  <main>
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search for ADA related queries...">
+      <button id="search-button">Search</button>
+    </div>
+    <div id="search-results"></div>
+  </main>
+  <footer>
+    <p>&copy; 2023, ADA Compliance Team</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form action="submit-form.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message"></textarea><br>
-        <input type="submit" value="Submit">
-      </form>
-    </section>
-
-    <footer>
-      <p>Copyright © 2023 My Portfolio</p>
-    </footer>
-    <script src="app.js">
-    </script>
-  </body>
 </html>
